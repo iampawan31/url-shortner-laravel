@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UrlShortnerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [UrlShortnerController::class, 'index']);
+Route::get('/{code}', [UrlShortnerController::class, 'show'])->name('urlShortner.link');
+Route::post('/', [UrlShortnerController::class, 'store']);
