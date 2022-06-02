@@ -22,7 +22,7 @@
 </head>
 
 <body class="antialiased bg-gray-300">
-    <div class="container mx-auto h-screen w-full flex flex-col space-y-4 my-10">
+    <div class="container mx-auto h-full w-full flex flex-col space-y-4 pt-10">
         <div class="p-2 w-full h-auto">
             <form method="POST" action="/">
                 @csrf
@@ -31,6 +31,9 @@
                         placeholder="Paste long url and shorten it" type="url" name="link" value="{{ old('link') }}">
                     <button class="bg-blue-500 text-white px-6 py-2 rounded-2xl" type="submit">Shorten</button>
                 </div>
+                @error('link')
+                    <div class="bg-red-500 px-4 py-2 rounded-2xl mt-4">{{ $message }}</div>
+                @enderror
             </form>
             @if (Session::has('success'))
                 @include('shared.success')

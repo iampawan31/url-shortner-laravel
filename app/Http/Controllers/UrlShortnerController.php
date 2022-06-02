@@ -45,5 +45,9 @@ class UrlShortnerController extends Controller
      */
     public function show($code)
     {
+        $shortLink = UrlShortner::where('code', $code)->first();
+        $shortLink->touch();
+
+        return redirect($shortLink->link);
     }
 }

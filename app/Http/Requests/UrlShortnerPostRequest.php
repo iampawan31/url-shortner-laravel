@@ -24,7 +24,7 @@ class UrlShortnerPostRequest extends FormRequest
     public function rules()
     {
         return [
-            'link' => 'required|unique:UrlShortner,link|url'
+            'link' => 'required|unique:App\Models\UrlShortner,link|url'
         ];
     }
 }

@@ -504,6 +504,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .-mt-px {
   margin-top: -1px;
 }
+.mt-10 {
+  margin-top: 2.5rem;
+}
 .flex {
   display: flex;
 }
@@ -533,6 +536,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .h-auto {
   height: auto;
+}
+.h-full {
+  height: 100%;
 }
 .min-h-screen {
   min-height: 100vh;
@@ -695,6 +701,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .pt-8 {
   padding-top: 2rem;
+}
+.pt-10 {
+  padding-top: 2.5rem;
 }
 .text-left {
   text-align: left;
