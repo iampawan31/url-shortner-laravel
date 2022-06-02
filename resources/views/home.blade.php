@@ -60,7 +60,9 @@
                                     target="_blank">{{ route('urlShortner.link', $shortLink->code) }}</a>
                             </td>
                             <td class="px-6 py-4">{{ $shortLink->created_at->diffForHumans() }}</td>
-                            <td class="px-6 py-4">{{ $shortLink->updated_at->diffForHumans() }}</td>
+                            <td class="px-6 py-4">
+                                {{ $shortLink->created_at->equalTo($shortLink->updated_at) ? 'Not Visited' : $shortLink->updated_at->diffForHumans() }}
+                            </td>
                         </tr>
                     @endforeach
                 </tbody>
